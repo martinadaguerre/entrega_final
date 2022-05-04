@@ -1,0 +1,19 @@
+{% extends "Appfinal/padre.html" %}
+{ load static  }
+
+
+{% block contenido %}
+
+<h1>Detalle Botines</h1>
+
+<p>Nombre: <i> {{ botines.tipo }}</i></p>
+<p>Talle: <i> {{ botines.talle }}</i></p>
+<p>Stock: <i> {{ botines.stock }}</i></p>
+<p>Precio: <i> {{ botines.precio }}</i></p>
+<br><br>
+
+<button><a href="{% url 'ListBot' %}" >Volver a Botines</a></button>
+<br><br>
+<button><a href="{% url 'Tienda' %}">Volver a tienda virtual</a></button>
+
+{% endblock %}

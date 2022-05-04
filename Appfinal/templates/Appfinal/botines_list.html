@@ -1,0 +1,25 @@
+
+{% extends "Appfinal/padre.html" %}
+{ load static  }
+
+
+{% block contenido %}
+<h1>Nuestros Botines</h1>
+{% for i in object_list%}
+<li>{{ i.tipo }}
+</li>
+{% if request.user.is_authenticated %}
+<button><a href="{% url 'Botines' i.id %}">Ver Mas</a></button>
+<button><a href="{% url 'EditBot' i.id %}">Editar</a></button>
+{% endif %}
+<button><a href="{% url 'DeleteBot' i.id %}">Eliminar</a></button>
+{% endfor %}
+<br><br><br>
+{% if request.user.is_authenticated %}
+<button><a href="{% url 'NewBotin'%}">Agregar mas Botines</a></button>
+{% endif%}
+<br>
+
+<br>
+<button><a href="{% url 'Tienda' %}">Volver</a></button>
+{% endblock %}

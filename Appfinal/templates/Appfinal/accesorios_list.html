@@ -1,0 +1,27 @@
+
+{% extends "Appfinal/padre.html" %}
+{ load static  }
+
+
+{% block contenido %}
+    <h1>Nuestros Accesorios</h1>
+    {% for i in object_list%}
+    <li>{{ i.tipo }}
+    </li>
+    <button><a href="{% url 'Accesorios' i.id %}">Ver Mas</a></button>
+    {% if request.user.is_authenticated %}
+    <button><a href="{% url 'EditAcces' i.id %}">Editar</a></button>
+    <button><a href="{% url 'DeleteAcces' i.id %}">Eliminar</a></button>
+    {% endif %}
+    
+    {% endfor %}
+    <br><br><br>
+    {% if request.user.is_authenticated %}
+    <button><a href="{% url 'NewAcces'%}">Agregar mas accesorios</a></button>
+    {% endif %}
+    <br>
+
+    <br>
+    <button><a href="{% url 'Tienda' %}">Volver</a></button>
+
+{% endblock %}

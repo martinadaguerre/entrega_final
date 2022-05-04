@@ -1,0 +1,12 @@
+{% extends "Appfinal/padre.html" %}
+{ load static  }
+
+
+{% block contenido %}
+
+<h2>Felicitaciones, su usuario ha sido creado, toque el siguiente boton para iniciar sesion</h2>
+
+<button> <a href="{% url 'Login' %}">Iniciar Sesion</a>
+</button>
+
+{% endblock %}

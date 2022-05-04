@@ -1,0 +1,19 @@
+{% extends "Appfinal/padre.html" %}
+{ load static  }
+
+
+{% block contenido %}
+<form action="" method= "POST">
+
+    {% csrf_token  %}
+
+    {{form.as_p}}
+    
+
+    <input type="submit" value= "LOGIN">
+
+
+</form>
+
+<p>Si no tenes un usuario, registrate haciendo click <a href="{% url 'Register' %}">ACA</a></p>
+{% endblock%}
