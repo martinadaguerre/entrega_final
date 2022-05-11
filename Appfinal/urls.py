@@ -7,7 +7,7 @@ from  Appfinal.views import register
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
-    path('index', views.index, name='Index'),
+    path('/', views.index, name='Index'),
     path('nosotros', views.nosotros, name='Nosotros'),
     path('contacto', views.formularioContacto, name='Contacto'),
     path('confirmacion', views.confirmacionContacto, name='Confirmacion'),
@@ -37,10 +37,10 @@ urlpatterns = [
     path(r'^borrar/(?P<pk>\d2+)$', views.BotinesDelete.as_view(), name= "DeleteBot"), 
     path(r'^borrar/(?P<pk>\d3+)$', views.RemerasDelete.as_view(), name= "DeleteRem"), 
     path(r'^borrar/(?P<pk>\d4+)$', views.ZapatillasDelete.as_view(), name= "DeleteZap"),  
-    path('register', views.register, name='Register' ),
-    path('login', views.login_request, name='Login'),
-    path('logout', LogoutView.as_view(template_name="Appfinal/logout.html"), name="Logout"),
-    path('editarperfil', views.editarPerfil, name='EditarPerfil'),
+    path('accounts/signup', views.register, name='Register' ),
+    path('accounts/login', views.login_request, name='Login'),
+    path('accounts/logout', LogoutView.as_view(template_name="Appfinal/logout.html"), name="Logout"),
+    path('accounts/profile', views.editarPerfil, name='EditarPerfil'),
     path('agregaravatar', views.agregarAvatar, name="AgregarAvatar")
 
     
